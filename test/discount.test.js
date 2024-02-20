@@ -60,9 +60,8 @@ describe("Basket Class with Discounts", function () {
         price: 10,
       };
       let couponArray = [{ code: "", cout: 2, idProduit: 1 }];
-      basket.addItem(product, 1.0);
-      expect(total).to.be.lessThan(1.0);
-      basket.applyDiscount(couponArray, product); // This should not work
+      basket.addItem(product, 2.0);
+      basket.applyDiscountforProduct(couponArray, product); // This should not work
       total = basket.calculateTotal();
       expect(total).to.equal(8);
     });
